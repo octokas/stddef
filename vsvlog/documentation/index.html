@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Kaska Miskolczi - Author behind stddef</title>
+	<meta name="author" content="Kaska Miskolczi">
+	<meta name="description" content="">
+	<meta name="keywords" content="technical documentation, standard type definitions, c language, c++, programming, coding, computer software, systems engineering, frequently asked questions">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon  -->
+	<link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+	<!-- Include StyleSheets -->
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<script src="js/modernizr.js"></script>
+</head>
+
+<body class="">
+	<!--[if lt IE 8]>
+	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<!-- Preloader: uncomment this if you want to show a smooth preloader while the page is loading. Don't forget to add the 'js-preload-me' class on the <body> tag. -->
+	<!-- <div class="preloader js-preloader"><div class="preloader-animation"></div></div>
+ -->
+	<!-- End of Preloader -->
+	<div class="page js-page ">
+		<!-- One Page Sidebar -->
+		<div class="one-page-sidebar">
+			<!-- One Page Sidebar Header -->
+			<div class="one-page-sidebar-header">
+				<!-- One Page Logo -->
+				<div class="one-page-logo">
+					<!-- Logo Image -->
+					<a href="http://themeforest.net/item/vsdocs-online-documentation-template/11418861" class="logo-image ">
+						<img src="img/logos/logo-text.png" alt="logo">
+					</a>
+					<!-- End of Logo Image -->
+				</div>
+				<!-- End of One Page Logo -->
+				<!-- One Page Meta -->
+				<div class="one-page-meta">
+					<ul class="one-page-meta-list">
+						<li>
+							<a href="http://themes.vsart.me/vsvlog/">
+								<i class="one-page-meta-list-icon fa fa-link"></i>
+								Demo
+							</a>
+						</li>
+						<li>
+							<a href="http://faq.vsart.me/">
+								<i class="one-page-meta-list-icon fa fa-question"></i>
+								FAQ
+							</a>
+						</li>
+						<li>
+							<a href="http://support.vsart.me/">
+								<i class="one-page-meta-list-icon fa fa-life-ring"></i>
+								Support
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- End of One Page Meta -->
+			</div>
+			<!-- End of One Page Sidebar Header -->
+			<!-- One Page Nav -->
+			<div class="one-page-nav-wrapper js-custom-scrollbar">
+				<ul class="one-page-nav js-one-page-nav js-menu-vertical" data-prepend-to=".js-prepend-mobile-menu">
+					<li class="is-active">
+						<a href="#content" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-sitemap"></i>
+							</span>File structure</a>
+					</li>
+					<li class="">
+						<a href="#getting-started" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-plug"></i>
+							</span>Getting started</a>
+					</li>
+					<li class="">
+						<a href="#block" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-puzzle-piece"></i>
+							</span>Block Structure</a>
+					</li>
+					<li class="">
+						<a href="#less-structure" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-diamond"></i>
+							</span>Less Structure</a>
+					</li>
+					<li class="">
+						<a href="#less-variables" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-map-signs"></i>
+							</span>Less Variables</a>
+					</li>
+					<li class="">
+						<a href="#js-structure" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-cube"></i>
+							</span>JavaScript Structure</a>
+					</li>
+					<li class="">
+						<a href="#plugins" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-gears"></i>
+							</span>Plugins</a>
+					</li>
+					<li class="">
+						<a href="#grid" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-th"></i>
+							</span>Grid</a>
+					</li>
+					<li class="">
+						<a href="#preloader" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-refresh"></i>
+							</span>Preloader</a>
+					</li>
+					<li class="">
+						<a href="#header" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-caret-up"></i>
+							</span>Header</a>
+					</li>
+					<li class="">
+						<a href="#footer" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-caret-down"></i>
+							</span>Footer</a>
+					</li>
+					<li class="">
+						<a href="#logo" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-trademark"></i>
+							</span>Logo</a>
+					</li>
+					<li class="">
+						<a href="#menu" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-bars"></i>
+							</span>Menu</a>
+					</li>
+					<li class="">
+						<a href="#search" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-search"></i>
+							</span>Search</a>
+					</li>
+					<li class="">
+						<a href="#icons" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-font"></i>
+							</span>Icons</a>
+					</li>
+					<li class="">
+						<a href="#dropdown" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-list-ol"></i>
+							</span>Dropdown</a>
+					</li>
+					<li class="">
+						<a href="#video" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-film"></i>
+							</span>Video</a>
+					</li>
+					<li class="">
+						<a href="#button" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-hand-pointer-o"></i>
+							</span>Button</a>
+					</li>
+					<li class="">
+						<a href="#tabs" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-table"></i>
+							</span>Tabs</a>
+					</li>
+					<li class="">
+						<a href="#stats" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-bar-chart"></i>
+							</span>Stats</a>
+					</li>
+					<li class="">
+						<a href="#form" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-envelope-o"></i>
+							</span>Contact form</a>
+					</li>
+					<li class="">
+						<a href="#browser-support" class="">
+							<span class="one-page-nav-icon">
+								<i class="fa fa-chrome"></i>
+							</span>Browser Support</a>
+					</li>
+				</ul>
+			</div>
+			<!-- End of One Page Nav -->
+			<!-- One Page Sidebar Footer -->
+			<footer class="one-page-sidebar-footer">
+				<a href="http://vsart.me">VSArt</a>, all rights reserved. 2015 © </footer>
+			<!-- End of One Page Sidebar Footer -->
+		</div>
+		<!-- End of One Page Sidebar -->
+		<!-- One Page Content -->
+		<div class="one-page-content">
+			<div id="content">
+				<div class="container-fluid container-spaced">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="js-prepend-mobile-menu">
+								<!-- The mobile menu will be prepended here -->
+							</div>
+							<!-- Category Info -->
+							<div class="category-info helper pt0" id="file-structure">
+								<h3 class="category-title"> File structure
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#file-structure">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">We have used the <a href="https://en.bem.info/">BEM methodology</a> for VSVlog so in result you get a very intuitive file structure. Please click on the folders to discover what's inside.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<!-- File Tree -->
+							<div class="file-tree">
+								<div class="file-tree-title"> VSVlog file hierarchy
+									<ul class="file-tree-buttons">
+										<li class="js-expand">
+											<i class="fa fa-plus"></i> Expand all</li>
+										<li class="js-collapse">
+											<i class="fa fa-minus"></i> Collapse all</li>
+									</ul>
+								</div>
+								<ul class="file-tree-list js-file-tree" data-expanded="">
+									<li class="is-folder">documentation - <span class="file-tree-description">template documentation</span></li>
+									<li class="is-folder">template - 
+										<span class="file-tree-description">template files</span>
+										<ul>
+											<li class="is-folder">assets -
+												<span class="file-tree-description">all common and vendor files used</span>
+												<ul>
+													<li class="is-folder">fonts -
+														<span class="file-tree-description">font icons are stored here</span>
+													</li>
+													<li class="is-folder">img -
+														<span class="file-tree-description">used images</span>
+														<ul>
+															<li class="is-folder">common -
+																<span class="file-tree-description">common images</span>
+															</li>
+															<li class="is-folder">vendor -
+																<span class="file-tree-description">images used by plugins</span>
+															</li>
+														</ul>
+													</li>
+													<li class="is-folder">js -
+														<span class="file-tree-description">JavaScript files</span>
+														<ul>
+															<li class="is-folder">common -
+																<span class="file-tree-description">common JavaScript functions</span>
+															</li>
+															<li class="is-folder">vendor -
+																<span class="file-tree-description">JavaScript libraries and plugins</span>
+															</li>
+														</ul>
+													</li>
+													<li class="is-folder">less -
+														<span class="file-tree-description">LESS files</span>
+														<ul>
+															<li class="is-folder">common -
+																<span class="file-tree-description">common less files like mixins, variable declaration, normalize etc.</span>
+															</li>
+															<li class="is-folder">vendor -
+																<span class="file-tree-description">LESS files required by plugins</span>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li class="is-folder">blocks -
+												<span class="file-tree-description">all the blocks and their LESS, JS and PHP associated files</span>
+												<ul>
+													<li class="is-folder">author -
+														<span class="file-tree-description">author block</span>
+													</li>
+													<li class="is-folder">box -
+														<span class="file-tree-description">box block</span>
+													</li>
+													<li class="is-folder">button -
+														<span class="file-tree-description">button block</span>
+													</li>
+													<li class="is-folder">comment -
+														<span class="file-tree-description">comment block</span>
+													</li>
+													<li class="is-folder">... -
+														<span class="file-tree-description">etc.</span>
+													</li>
+												</ul>
+											</li>
+											<li class="is-folder">dist -
+												<span class="file-tree-description">distributed CSS and JavaScript files</span>
+												<ul>
+													<li class="is-folder">dev - 
+														<span class="file-tree-description">
+															development ready scripts used in the dev.html boilerplate
+														</span>
+														<ul>
+															<li class="is-file">blocks.js - <span class="file-tree-description">general function, bindings and plug-ins initializations.</span></li>
+															<li class="is-file">layout.js - <span class="file-tree-description">JavaScript layout used to wrap the blocks' scripts.</span></li>
+															<li class="is-file">vendor.js - <span class="file-tree-description">JavaScript libraries and plugins concatenated.</span></li>
+														</ul>
+													</li>
+													<li class="is-file">script.min.js - 
+														<span class="file-tree-description">all the JavaScript files concatenated and minified</span>
+													</li>
+													<li class="is-file">script.js -
+														<span class="file-tree-description">all the JavaScript files concatenated</span>
+													</li>
+													<li class="is-file">style.min.css
+														<span class="file-tree-description">CSS code concatenated and minified</span>
+													</li>
+													<li class="is-file">style.css
+														<span class="file-tree-description">CSS code concatenated</span>
+													</li>
+												</ul>
+											</li>
+											<li class="is-file">dev.html -
+												<span class="file-tree-description">development boilerplate that include unminified CSS and JavaScript files.</span>
+											</li>
+											<li class="is-file">index.html -
+												<span class="file-tree-description">home page</span>
+											</li>
+											<li class="is-file">about.html -
+												<span class="file-tree-description">about page</span>
+											</li>
+											<li class="is-file">article.html -
+												<span class="file-tree-description">article page</span>
+											</li>
+											<li class="is-file">... -
+												<span class="file-tree-description">etc</span>
+											</li>
+										</ul>
+									</li>
+									<li class="is-file">
+										gulpfile.js - <span class="file-tree-description">gulp tasks</span>
+									</li>
+									<li class="is-file">
+										package.json - <span class="file-tree-description">Node.js dependencies</span>
+									</li>
+								</ul>
+							</div>
+							<!-- End of FIle Tree -->
+							<!-- Category Info -->
+							<div class="category-info " id="getting-started">
+								<h3 class="category-title">Getting Started
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#application-structure">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">Using Gulp.js - VSVlog comes with some basic Gulp configuration that should optimize and simplify your workflow. Please follow these steps in order to take full advantage of Gulp's build system.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="helper mb20"></div>
+							<!-- Steps -->
+							<ul class="steps">
+								<li class="step">
+									<span class="step-number">1</span>
+									<h4 class="step-title">Install Node.js.</h4>
+									<div class="step-content">Go to
+										<a href='https://nodejs.org/en/download/'>nodejs.org</a> and download the pre-built installer for your platform. Once it's downloaded, install it.</div>
+								</li>
+								<li class="step">
+									<span class="step-number">2</span>
+									<h4 class="step-title">Open the Node.js command prompt (terminal) and install Gulp globally.</h4>
+									<div class="step-content">Within the terminal please run
+										<span class='mark fill grey'>npm install -g gulp</span>. If you are on a Mac, you may need to run it with administrator permissions, so you'll have to run
+										<span class='mark fill grey'>sudo npm install -g gulp</span> instead.</div>
+								</li>
+								<li class="step">
+									<span class="step-number">3</span>
+									<h4 class="step-title">Within the terminal, navigate to your project directory.</h4>
+									<div class="step-content">Run
+										<span class='mark fill grey'>cd path/to/your/project/</span>, or you can open the terminal directly in the project's folder. Please note that you should navigate to the folder where the 'gulpfile.js' and the 'package.json' files are located, not to the 'template' folder.</div>
+								</li>
+								<li class="step">
+									<span class="step-number">4</span>
+									<h4 class="step-title">Install the dependencies.</h4>
+									<div class="step-content">Once you navigated to the project directory, run
+										<span class='mark fill grey'>npm install</span> and wait until all the required modules will be installed. Node.js is going to create a folder called 'node_modules' and inside that folder all the modules will be installed. Please check that folder for the following modules:
+										browser-sync, gulp, gulp-clean-css, gulp-concat, gulp-less, gulp-rename, gulp-uglify, gulp-watch, gulp-wrap. If any of these are missing, then you'll have to install the missing ones manually. To do so run
+										<span class='mark fill grey'>npm install [missing module]</span>, for example if 'browser-sync' is missing, then you'll have to run
+										<span class='mark fill grey'>npm install browser-sync</span>.</div>
+								</li>
+								<li class="step">
+									<span class="step-number">5</span>
+									<h4 class="step-title">Run Gulp</h4>
+									<div class="step-content">In the 'gulpfile.js' there are two Gulp tasks predefined - 'dev' task and 'prod' task. Please run
+										<span class='mark fill grey'>gulp dev</span> if you are in development and
+										<span class='mark fill grey'>gulp prod</span> if you finished the development process and want to move the project on the server. The difference between these two is that when you are in development mode gulp is going to watch files for changes and refresh the browser when
+										needed, but in production mode it will concatenate and minify the JavaScript files. If you ran the
+										<span class='mark fill grey'>gulp dev</span> task, please don't close the terminal once all the sub tasks are finished because gulp is still watching for changes and this keeps the local server up and running. To stop the process in the terminal please press
+										<span class='mark fill grey'>CTRL + C</span>.</div>
+								</li>
+								<li class="step">
+									<span class="step-number">6</span>
+									<h4 class="step-title">Start developing</h4>
+									<div class="step-content">Since Gulp is watching for file changes, the browser will refresh each time you update any LESS, JavaScript or HTML file.</div>
+								</li>
+								<li class="step">
+									<span class="step-number">7</span>
+									<h4 class="step-title">Edit blocks</h4>
+									<div class="step-content">All the block's associated files are in the <span class='mark fill grey'>template/blocks/[block name]/</span> folder. Gulp watches for changes in those files and will rebuild when any changes are detected.</div>
+								</li>
+							</ul>
+							<!-- End of Steps -->
+							<!-- Category Info -->
+							<div class="category-info " id="">
+								<h4 class="category-description">Without Gulp - VSVlog has two predefined states: development and pre-production</h4>
+								<p class="category-content"> By default all the files are in pre-production mode, that means HTML files include the concatenated versions of the JavaScript and CSS files. If you want to switch to development mode you can use the
+									<span class='mark fill grey'>dev.html</span> boilerplate. The <span class='mark fill grey'>dev.html</span> file includes unminifed and separated JavaScript and CSS files. The minified versions of the CSS and JavaScript files are also available, so you may want to include them into your HTML file if you want to switch to the production state.
+							</div>
+							<!-- End of Caregory Info -->
+							<!-- Category Info -->
+							<div class="category-info " id="block">
+								<h3 class="category-title">Block Structure
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#block">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">BEM stands for Block, Element and Modifier. According to the BEM methodology, a block is a logical and functionally independent page component. In VSVlog every block has its folder inside the "blocks" folder, see below block's file structure.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<!-- File Tree Text -->
+							<ul class="file-tree-text js-file-tree-text">
+								<li>
+									<span class="file-tree-text-name">blocks/</span>
+									<ul class="file-tree-text-folder">
+										<li>
+											<span class="file-tree-text-name">blockName/</span>
+											<ul class="file-tree-text-folder">
+												<li><span class="file-tree-text-name">blockName.less</span></li>
+												<li><span class="file-tree-text-name">blockName.js</span></li>
+												<li><span class="file-tree-text-name">blockName.php</span></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<!-- End of File Tree Text -->
+							<!-- Category Info -->
+							<div class="category-info " id="less-structure">
+								<h3 class="category-title">Less Structure
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#less-structure">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">See below the LESS pattern used to style VSVlog.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-less js-code">
+.block{
+	// Block styles
+	text-align: left;
+	
+	&__element{
+		// Element styles
+		text-align: center;
+	}
+
+	&--modifier{
+		// Modifier styles
+		text-align: right;
+	}
+}
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="less-variables">
+								<h3 class="category-title"> Less Variables
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#less-variables">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">You can find below the full list of configurable options available currently in less. In order to update this options, open the "assets/less/common/config.less" and make the necessary changes.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<!-- Table -->
+							<div class="table-responsive">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Variable</th>
+											<th>Default</th>
+											<th>Description</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="">
+											<th scope="row">@color__primary</th>
+											<td>#e14646</td>
+											<td>Main theme color.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@color__black</th>
+											<td>#010101</td>
+											<td>Main black color used for all the texts on the template and for the dark elements.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@color__grey</th>
+											<td>#b5b5b5</td>
+											<td>Grey color.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@color__grey--light</th>
+											<td>#ededed</td>
+											<td>Light Grey color.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@font__primary</th>
+											<td>'Roboto', sans-serif</td>
+											<td>Main font family used for the main text.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@font__secondary</th>
+											<td>'Merriweather', serif</td>
+											<td>Serif font family used for secondary texts.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@icon__primary</th>
+											<td>"simple-line-icons"</td>
+											<td>Main font icons.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@icon__secondary</th>
+											<td>"fontello"</td>
+											<td>Secondary font icons.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@img__common</th>
+											<td>"../assets/img/common/"</td>
+											<td>Path to the common images.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@img__common--background</th>
+											<td>"@{img__common}backgrounds/"</td>
+											<td>Path to the background images.</td>
+										</tr>
+										<tr class="">
+											<th scope="row">@img__vendor</th>
+											<td>"../assees/img/vendor/"</td>
+											<td>Path to vendor images.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- End of Table -->
+							<!-- Category Info -->
+							<div class="category-info " id="js-structure">
+								<h3 class="category-title">JavaScript Structure
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#js-structure">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">See below the JavaScript pattern used to develop VSVlog.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-javascript js-code">
+// Block name: Menu
+// Dependencies: jquery.hoverIntent.js jquery.superfish.js
+// Docs: https://github.com/joeldbirch/superfish
+(function(){
+	var menu = $('.js-menu');
+
+	menu.superfish({
+		delay: 300,
+	    autoArrows: false,
+	    speed: 'fast',
+	    disableHI: true
+	});
+
+})();
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="plugins">
+								<h3 class="category-title">Plugins
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#plugins">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">All third party assets are locate in the "assets" folder, grouped by file format. See the assets file structure below. If you are using gulp, then just drop any plugin or lib in these folders and the project will automatically rebuild with the new file included in the right order.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<!-- File Tree Text -->
+							<ul class="file-tree-text js-file-tree-text">
+								<li>
+									<span class="file-tree-text-name">assets/</span>
+									<ul class="file-tree-text-folder">
+										<li>
+											<span class="file-tree-text-name">js/</span>
+											<ul class="file-tree-text-folder">
+												<li><span class="file-tree-text-name">common/</span></li>
+												<li>
+													<span class="file-tree-text-name">vendor/</span>
+													<ul class="file-tree-text-folder">
+														<li>
+															<span class="file-tree-text-name">libs/</span>
+															<ul class="file-tree-text-folder">
+																<li><span class="file-tree-text-name">jquery.js</span></li>
+																<li><span class="file-tree-text-name">velocity.js</span></li>
+															</ul>
+														</li>
+														<li>
+															<span class="file-tree-text-name">plugins/</span>
+															<ul class="file-tree-text-folder">
+																<li><span class="file-tree-text-name">jquery.easytabs.js</span></li>
+																<li><span class="file-tree-text-name">jquery.fitvids.js</span></li>
+																<li><span class="file-tree-text-name">...</span></li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<span class="file-tree-text-name">less/</span>
+											<ul class="file-tree-text-folder">
+												<li><span class="file-tree-text-name">common/</span></li>
+												<li>
+													<span class="file-tree-text-name">vendor/</span>
+													<ul class="file-tree-text-folder">
+														<li><span class="file-tree-text-name">jquery.slinky.less</span></li>
+														<li><span class="file-tree-text-name">jquery.superfish.less</span></li>
+														<li><span class="file-tree-text-name">...</span></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<!-- End of File Tree Text -->
+							<!-- Category Info -->
+							<div class="category-info " id="grid">
+								<h3 class="category-title"> Grid
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#grid">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">VSVlog uses Bootstrap's 24 columns based grid system, you can see its structure below. For more information please visit the <a href='http://getbootstrap.com/css/#grid-example-basic'>official bootstrap documentation</a> page.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-md-16&quot;&gt;.col-md-16&lt;/div&gt;
+	&lt;div class=&quot;col-md-8&quot;&gt;.col-md-8&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-md-8&quot;&gt;.col-md-8&lt;/div&gt;
+	&lt;div class=&quot;col-md-8&quot;&gt;.col-md-8&lt;/div&gt;
+	&lt;div class=&quot;col-md-8&quot;&gt;.col-md-8&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-md-12&quot;&gt;.col-md-12&lt;/div&gt;
+	&lt;div class=&quot;col-md-12&quot;&gt;.col-md-12&lt;/div&gt;
+&lt;/div&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="preloader">
+								<h3 class="category-title">Preloader
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#preloader">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">The animated preloader on VSVlog is enabled by default. In case you want to disable it and show the page without it, then just remove the "js-preload-me" class from the &lt;body&gt; tag.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">&lt;!-- Remove the &quot;js-preload-me&quot; class from the body tag --&gt;
+&lt;body class=&quot;js-preload-me&quot;&gt;
+	...
+
+	...
+&lt;/body&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="header">
+								<h3 class="category-title">Header
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#header">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">The header has a fairly simple structure. Please take a look at the snippet below. If you want to separate the header from the white page with a border, add the "header--border" modifier.</h4>
+							</div>
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">&lt;!-- Header --&gt;
+
+&lt;div class=&quot;header__wrapper&quot;&gt;
+	&lt;header class=&quot;header js-header [modifier]&quot;&gt;
+		&lt;div class=&quot;container-fluid&quot;&gt;
+			&lt;div class=&quot;row&quot;&gt;
+				&lt;div class=&quot;col-md-3 col-sm-10 col-xs-10&quot;&gt;
+					[ Logo ]
+				&lt;/div&gt;
+				&lt;div class=&quot;col-md-18 hidden-sm hidden-xs&quot;&gt;
+					[ Menu ]
+				&lt;/div&gt;
+				&lt;div class=&quot;col-md-3 col-sm-14 col-xs-14&quot;&gt;
+					[ Header Buttons ]
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/header&gt;
+	[ Search Drawer ]
+	[ Tablet Menu Drawer ]
+	[ Mobile Menu Drawer ]
+&lt;/div&gt;
+
+&lt;!-- End of Header --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="footer">
+								<h3 class="category-title"> Footer
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#footer">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">See below the footer's HTML structure. Optionally you can add the "footer--dark" modifier if you want to switch to the dark version of the footer.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">&lt;!-- Footer --&gt;
+
+&lt;footer class=&quot;footer [modifier]&quot;&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;div class=&quot;row&quot;&gt;
+			&lt;div class=&quot;col-md-24&quot;&gt;
+				&lt;div class=&quot;mb60&quot;&gt;
+					[ Subscribe ]
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;col-md-24&quot;&gt;
+				[ Copyright ]
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/footer&gt;
+
+&lt;!-- End of Footer --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="logo">
+								<h3 class="category-title"> Logo
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#logo">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">VSVlog supports both logo types, image and text. In order to switch to the text logo, just replace the image with a text.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">&lt;!-- Logo Image --&gt;
+&lt;div class=&quot;logo&quot;&gt;
+	&lt;a href=&quot;index.html&quot; class=&quot;logo__link&quot;&gt;
+		&lt;img src=&quot;path/to/logo&quot; alt=&quot;logo&quot; class=&quot;logo__image&quot;&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- End of Logo Image --&gt;
+
+&lt;!-- Logo Text --&gt;
+&lt;div class=&quot;logo&quot;&gt;
+	&lt;a href=&quot;index.html&quot; class=&quot;logo__link&quot;&gt;
+		Your Logo
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- End of Logo Text --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="menu">
+								<h3 class="category-title"> Menu
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#menu">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">The main menu in VSVlog is in the header and has the following structure. For the best user experience we've developed three different menus for desktop, tablet and mobile devices, so you'll have to duplicate the main menu structure in the header's drawers. While the tablet menu has the exact same HTML structure, the mobile menu has a slightly different one. See the mobile menu structure below.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Menu --&gt;
+&lt;nav&gt;
+	&lt;ul class=&quot;menu js-menu sf-menu menu--center&quot;&gt;
+		&lt;li class=&quot;menu__item&quot;&gt;
+			&lt;a href=&quot;#&quot; class=&quot;menu__link&quot;&gt;Menu Item&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;menu__item&quot;&gt;
+			&lt;a href=&quot;#&quot; class=&quot;menu__link&quot;&gt;Menu Item&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;menu__item&quot;&gt;
+			&lt;a href=&quot;#&quot; class=&quot;menu__link&quot;&gt;Menu Item&lt;/a&gt;
+			&lt;ul class=&quot;menu__child&quot;&gt;
+				&lt;li class=&quot;menu__item&quot;&gt;
+					&lt;a href=&quot;#&quot; class=&quot;menu__link&quot;&gt;Nested Menu Item&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;menu__item&quot;&gt;
+					&lt;a href=&quot;#&quot; class=&quot;menu__link&quot;&gt;Nested Menu Item&lt;/a&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;menu__item&quot;&gt;
+			&lt;a href=&quot;#&quot; class=&quot;menu__link&quot;&gt;Menu Item&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;!-- End of Menu --&gt;
+
+&lt;!-- Menu Mobile --&gt;
+&lt;nav class=&quot;js-menu-mobile slinky-menu&quot;&gt;
+	&lt;ul class=&quot;menu-mobile&quot;&gt;
+		&lt;li class=&quot;menu-mobile__item&quot;&gt;
+			&lt;a href=&quot;#&quot; class=&quot;menu-mobile__link&quot;&gt;Menu Item&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;menu-mobile__item &quot;&gt;
+			&lt;a href=&quot;#&quot; class=&quot;menu-mobile__link&quot;&gt;Menu Item&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;menu-mobile__item &quot;&gt;
+			&lt;a href=&quot;#&quot; class=&quot;menu-mobile__link&quot;&gt;Menu Item&lt;/a&gt;
+			&lt;ul class=&quot;menu-mobile__child&quot;&gt;
+				&lt;li class=&quot;menu-mobile__item &quot;&gt;
+					&lt;a href=&quot;#&quot; class=&quot;menu-mobile__link&quot;&gt;Nested Menu Item&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;menu-mobile__item &quot;&gt;
+					&lt;a href=&quot;#&quot; class=&quot;menu-mobile__link&quot;&gt;Nested Menu Item&lt;/a&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;!-- End of Menu Mobile --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="search">
+								<h3 class="category-title">Search
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#search">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">The search block is presented in VSVlog as a header drawer and it appears by clicking on the elements with the "js-button-search" class. By default this class is added on the search icon in the header.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Button Search --&gt;
+
+&lt;div class=&quot;button-search js-button-search search-button--header&quot;&gt;
+	&lt;i class=&quot;icon-magnifier button-search__icon&quot;&gt;&lt;/i&gt;
+	&lt;span class=&quot;button-search__icon--close&quot;&gt;&#x2715;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- End of Button Search --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="icons">
+								<h3 class="category-title">Icons
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#icons">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">VSVlog comes with an amazing icon collection called "Simple Line Icons". For the full list of available icons, please visit their <a href="http://thesabbir.github.io/simple-line-icons/">official documentation</a>.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Icon --&gt;
+
+&lt;i class=&quot;icon-arrow-right&quot;&gt;&lt;/i&gt;
+
+&lt;!-- End of Icon --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="dropdown">
+								<h3 class="category-title">Dropdown
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#dropdown">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">Please follow this simple structure to create a dropdown.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Dropdown --&gt;
+
+&lt;div class=&quot;dropdown&quot;&gt;
+	&lt;div class=&quot;dropdown__label&quot;&gt;Your Label&lt;/div&gt;
+	&lt;ul class=&quot;dropdown__list&quot;&gt;
+		&lt;li class=&quot;dropdown__item&quot;&gt;Option 1&lt;/li&gt;
+		&lt;li class=&quot;dropdown__item&quot;&gt;Option 2&lt;/li&gt;
+		&lt;li class=&quot;dropdown__item&quot;&gt;Option 3&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- End of Dropdown --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="video">
+								<h3 class="category-title">Video
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#video">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">You can show a video in two different ways. First one is to redirect the user to the video page (internal link) or to a video hosting provider like YouTube or Vimeo. And the second one is to show the video in a modal. See below how to implement both of them. Please note that the modal supports only YouTube and Vimeo videos.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Video Link --&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=ZvPxjhTOEgM&quot;&gt;Watch Video on YouTube&lt;/a&gt;
+&lt;!-- End of Video Link --&gt;
+
+&lt;!-- Video Modal --&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=ZvPxjhTOEgM&quot; class=&quot;js-modal-video&quot;&gt;Show Video in a Modal&lt;/a&gt;
+&lt;!-- End of Video Modal --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="button">
+								<h3 class="category-title">Button
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#button">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">Use the following markup to create a button.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Button --&gt;
+&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;
+	&lt;i class=&quot;button__icon&quot;&gt;&lt;/i&gt;Button 
+&lt;/a&gt;
+&lt;!-- End of Button --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="tabs">
+								<h3 class="category-title">Tabs
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#tabs">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">The tabs in VSVlog have also an intuitive structure, see below.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Tabs --&gt;
+
+&lt;div class=&quot;tabs js-tabs&quot;&gt;
+	&lt;ul class=&quot;tabs__header&quot;&gt;
+		&lt;li class=&quot;tabs__title&quot;&gt;
+			&lt;a class=&quot;tabs__link&quot; href=&quot;#[ Tab ID ]&quot;&gt;[ Tab Title ]&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;tabs__title&quot;&gt;
+			&lt;a class=&quot;tabs__link&quot; href=&quot;#[ Tab ID ]&quot;&gt;[ Tab Title ]&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;tabs__title&quot;&gt;
+			&lt;a class=&quot;tabs__link&quot; href=&quot;#[ Tab ID ]&quot;&gt;[ Tab Title ]&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div id=&quot;[ Tab ID ]&quot; class=&quot;tabs__content&quot;&gt;
+		[ Tab Content ]
+	&lt;/div&gt;
+	&lt;div id=&quot;[ Tab ID ]&quot; class=&quot;tabs__content&quot;&gt;
+		[ Tab Content ]
+	&lt;/div&gt;
+	&lt;div id=&quot;[ Tab ID ]&quot; class=&quot;tabs__content&quot;&gt;
+		[ Tab Content ]
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- End of Tabs --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="stats">
+								<h3 class="category-title">Stats
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#stats">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">If you want to present some prideful statistics, please use the following markup. The numbers will be animated on page scroll.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Stats --&gt;
+
+&lt;div class=&quot;stats&quot;&gt;
+	&lt;div class=&quot;stats__row&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;div class=&quot;stats__columns&quot;&gt;
+				&lt;div class=&quot;stats__item&quot;&gt;
+					&lt;div class=&quot;stats__info&quot;&gt;
+						&lt;h4 class=&quot;stats__number&quot;&gt;
+							&lt;span class=&quot;js-animate-number&quot; data-number=&quot;[ Statistics Number ]&quot;&gt;0&lt;/span&gt;
+						&lt;/h4&gt;
+						&lt;p class=&quot;stats__text&quot;&gt;[ Statistics Description ]&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;stats__item&quot;&gt;
+					&lt;div class=&quot;stats__info&quot;&gt;
+						&lt;h4 class=&quot;stats__number&quot;&gt;
+							&lt;span class=&quot;js-animate-number&quot; data-number=&quot;[ Statistics Number ]&quot;&gt;0&lt;/span&gt;+&lt;/h4&gt;
+						&lt;p class=&quot;stats__text&quot;&gt;[ Statistics Description ]&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- End of Stats --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="form">
+								<h3 class="category-title">Contact form
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#form">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">VSVlog comes with a working contact form with smart data validation. You should configure it first, so please open the 'php/contact.php' file and set the '$myemail' variable to your specific email address where all the messages should be sent.
+								The data will be wrapped by the included
+								<a href='../template/template-mail.html'>email template</a>. Bellow you'll find the form's markup with its default validation attributes. For more information on data validation please visit the
+								<a href='https://github.com/victorjonsson/jQuery-Form-Validator'>plugin's official documentation</a>. The contact form will probably not work on your local server, so you may consider moving your project on your online server when testing it. Also, please make sure your 'php' folder has the 755 permissions
+								set recursively.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<div class="code-highlight">
+								<span class="js-copy-to-clipboard copy-code">copy</span> <pre><code class="language-markup js-code">
+&lt;!-- Form Contact --&gt;
+
+&lt;form action=&quot;blocks/form-contact/form-contact.php&quot; class=&quot;form-contact js-form-contact&quot;&gt;
+	&lt;div class=&quot;form-contact__modal js-form-contact__modal&quot;&gt;
+		&lt;h3 class=&quot;form-contact__message&quot;&gt; 
+			Your message was sent successfully.
+			&lt;br&gt;
+			Thank you! 
+		&lt;/h3&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;col-md-12&quot;&gt;
+			&lt;input type=&quot;text&quot; class=&quot;input&quot; name=&quot;full-name&quot; placeholder=&quot;Name&quot; data-validation=&quot;required&quot;&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;col-md-12&quot;&gt;
+			&lt;input type=&quot;text&quot; class=&quot;input&quot; name=&quot;email&quot; placeholder=&quot;Email&quot; data-validation=&quot;required email&quot;&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;col-md-24&quot;&gt;
+			&lt;input type=&quot;text&quot; class=&quot;input&quot; name=&quot;subject&quot; placeholder=&quot;Subject&quot; data-validation=&quot;required&quot;&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;col-md-24&quot;&gt;
+			&lt;textarea name=&quot;message&quot; id=&quot;&quot; cols=&quot;30&quot; rows=&quot;10&quot; class=&quot;textarea&quot; placeholder=&quot;Message&quot; data-validation=&quot;required&quot;&gt;&lt;/textarea&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;col-md-24 right&quot;&gt;
+			&lt;button class=&quot;button &quot;&gt;
+				&lt;i class=&quot;button__icon icon-paper-plane&quot;&gt;&lt;/i&gt;Send 
+			&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+
+&lt;!-- End of Form Contact --&gt;
+</code></pre> </div>
+							<!-- Category Info -->
+							<div class="category-info " id="browser-support">
+								<h3 class="category-title"> Browser support
+									<!-- Fragment Identifier -->
+									<a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll" href="#browser-support">
+										<i class="fa fa-link"></i>
+									</a>
+									<!-- End of Fragment Identifier -->
+								</h3>
+								<h4 class="category-description">Specifically, we support the latest versions of the following browsers and platforms. On Windows, we support Internet Explorer 10+.</h4>
+							</div>
+							<!-- End of Caregory Info -->
+							<!-- Browser Support -->
+							<ul class="browsers ">
+								<li class="browser-recommended">
+									<div class="browser-icon">
+										<svg enable-background="new 0 0 515.91 728.5" height="64" id="Layer_2" viewBox="0 0 512.00003 512" width="64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+											<defs id="defs7" />
+											<g id="g6625" transform="translate(-141.91412,-143.63566)">
+												<path d="m 397.91414,530.64366 c -26.00001,0 -49.66401,-7.008 -71.00801,-20.992 -21.344,-14 -37.344,-32 -48,-54 L 173.91412,271.63565 c -22,39.344 -32,83.344 -32,128.00001 0,64 20.832,119.84 62.496,167.50401 41.66401,47.664 93.50401,76.16 155.50401,85.504 l 74.25601,-128.49601 c -7.472,2.192 -19.936,6.496 -36.256,6.496 z"
+												id="path5-5" style="fill:#4aae48" />
+												<path d="m 317.41813,296.13165 c 23.648,-18.32 50.496,-24.496 80.49601,-24.496 4,0 220.00001,0 220.00001,0 -22.672,-38.656 -53.504,-71.32801 -92.49601,-94.00001 -39.008,-22.656 -81.504,-34 -127.504,-34 -40.00001,0 -77.34401,8.496 -112.00001,25.504 -34.672,16.992 -66.75201,41.744 -90.25601,73.50401 l 74.25601,124.992 c 7.328,-28.656 23.824,-53.152 47.504,-71.504 z"
+												id="path7-1" style="fill:#ea3939" />
+												<path d="M 634.66615,303.63565 H 485.91414 c 26,26 43.008,59.344 43.008,96.00001 0,27.344 -7.664,52.336 -23.008,75.008 l -104.992,180.99201 c 70,-0.672 129.664,-26 179.00801,-76 49.312,-50.00001 73.984,-110.00001 73.984,-180.00001 0,-32.65601 -5.504,-67.00801 -19.248,-96.00001 z"
+												id="path9-7" style="fill:#fed14b" />
+												<circle cx="16" cy="16" id="circle11" r="6" style="fill:#188fd1" transform="matrix(16.000001,0,0,16.000001,141.91412,143.63564)" />
+											</g>
+										</svg>
+									</div>
+									<h4 class="browser-title"> Chrome </h4>
+								</li>
+								<li>
+									<div class="browser-icon">
+										<svg enable-background="new 0.907 -0.205 32 32" height="64" viewBox="0.907 -0.205 32 32" width="64" xmlns="http://www.w3.org/2000/svg">
+											<path clip-rule="evenodd" d="M16.907-.205c-8.836 0-16 7.164-16 16s7.164 16 16 16 16-7.164 16-16-7.164-16-16-16zm0 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z" fill="#26A6D1" fill-rule="evenodd" />
+											<path clip-rule="evenodd" d="M25.221 7.48l-6.192 10.436-4.242-4.243 10.434-6.193z" fill="#E2574C" fill-rule="evenodd" />
+											<path clip-rule="evenodd" d="M8.594 24.11l10.435-6.193-4.242-4.243-6.193 10.436z" fill="#E4E7E7" fill-rule="evenodd" />
+										</svg>
+									</div>
+									<h4 class="browser-title"> Safari </h4>
+								</li>
+								<li>
+									<div class="browser-icon">
+										<svg enable-background="new 0 0 32 32" height="64" id="Layer_1" viewBox="0 0 32 32" width="64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+											<g>
+												<path d="M26.737,4.375c2.842,2.917,4.264,6.75,4.264,11.5c0,4.334-1.422,8.104-4.264,11.312   C23.895,30.396,20.295,32,15.938,32c-4.316,0-7.885-1.604-10.706-4.812C2.41,23.979,1,20.209,1,15.875   c0-4.75,1.39-8.583,4.171-11.5C7.95,1.459,11.54,0,15.938,0C20.295,0,23.895,1.459,26.737,4.375z M21.291,11.062   c-0.124-1.291-0.373-2.552-0.747-3.781c-0.373-1.229-0.944-2.177-1.711-2.844c-0.769-0.666-1.733-1-2.895-1   c-1.162,0-2.116,0.323-2.863,0.969C12.328,5.053,11.778,6,11.426,7.25S10.835,9.75,10.71,11c-0.124,1.25-0.187,2.771-0.187,4.562   c0,1.125,0.021,2.073,0.062,2.844c0.04,0.771,0.113,1.709,0.218,2.812c0.103,1.104,0.27,2.031,0.498,2.781   c0.228,0.75,0.538,1.49,0.934,2.219c0.394,0.729,0.902,1.281,1.524,1.656s1.348,0.562,2.179,0.562c0.829,0,1.565-0.188,2.21-0.562   c0.643-0.375,1.161-0.927,1.556-1.656C20.098,25.49,20.42,24.75,20.669,24s0.436-1.677,0.56-2.781   c0.125-1.104,0.197-2.052,0.219-2.844c0.02-0.791,0.03-1.729,0.03-2.812C21.478,13.854,21.416,12.354,21.291,11.062z"
+												fill="#EA3939" />
+											</g>
+											<g/>
+											<g/>
+											<g/>
+											<g/>
+											<g/>
+											<g/>
+										</svg>
+									</div>
+									<h4 class="browser-title"> Opera </h4>
+								</li>
+								<li>
+									<div class="browser-icon">
+										<svg enable-background="new -0.002 -0.501 32 31" height="64" viewBox="-0.002 -0.501 32 31" width="64" xmlns="http://www.w3.org/2000/svg">
+											<path d="M15.998-.501c8.284 0 15 6.715 15 15 0 8.283-6.716 15-15 15s-15-6.717-15-15c0-8.286 6.716-15 15-15z" fill="#2394BC" />
+											<path d="M18.562 30.274c7.614-1.229 13.437-7.814 13.437-15.775l-.146.181c.228-1.513.188-2.861-.125-4.037-.112.871-.234 1.397-.357 1.608-.001-.068-.018-.976-.307-2.243-.137-.924-.338-1.793-.616-2.596.068.368.108.675.128.953-1.162-3.118-4.023-6.957-11.072-6.867 0 0 2.479.262 3.646 2.029 0 0-1.193-.285-2.095.152 1.099.438 2.052.896 2.863 1.374l.07.043c.208.125.385.253.573.38 1.498 1.052 2.888 2.553 2.782 4.489-.323-.51-.753-.844-1.304-1.012.679 2.66.746 4.857.197 6.59-.377-1.154-.724-1.846-1.033-2.09.431 3.566-.15 6.203-1.739 7.922.302-1.049.422-1.908.354-2.586-1.867 2.822-3.991 4.281-6.372 4.371-.941-.008-1.83-.15-2.666-.426-1.228-.415-2.339-1.124-3.328-2.13 1.544.129 2.954-.139 4.195-.772l2.033-1.332-.008-.006c.264-.1.512-.092.754.021.496-.068.67-.334.504-.783-.24-.334-.603-.637-1.069-.904-1.017-.531-2.079-.447-3.187.26-1.055.6-2.07.576-3.058-.062-.647-.447-1.272-1.049-1.876-1.801l-.24-.355c-.113.852.015 1.945.398 3.291l.008.018-.008-.016c-.384-1.346-.511-2.442-.398-3.293v-.008c.029-.744.337-1.154.924-1.246l-.249-.021.251.021c.663.061 1.424.213 2.282.463.144-.828-.045-1.695-.564-2.584v-.016c.806-.752 1.521-1.299 2.132-1.648.271-.145.429-.365.481-.662l.022-.016.008-.008.03-.029c.158-.236.105-.426-.165-.594-.565.031-1.131-.008-1.695-.121l-.008.023c-.233-.068-.527-.275-.889-.625l-.927-.912-.278-.219v.029h-.008l.008-.037-.053-.055.075-.053c.128-.691.339-1.285.64-1.795l.068-.061c.302-.502.881-1.041 1.732-1.617-1.582.197-3.013.91-4.285 2.143-1.055-.387-2.305-.305-3.744.25l-.173.132-.013.007.188-.138.008-.008c-.905-.416-1.515-1.611-1.809-3.564-1.152 1.141-1.71 3.178-1.673 6.119l-.33.499-.085.058-.017.016-.007.007-.016.033c-.175.274-.416.688-.72 1.244-.437.786-.584 1.446-.627 2.021l-.004.007.002.019-.014.151.025-.04c.003.133.006.267.04.387l.934-.768c-.339.859-.564 1.77-.678 2.736l-.027.442-.293-.335c0 3.428 1.088 6.597 2.924 9.201l.055.086.088.105c1.32 1.813 3.006 3.338 4.958 4.464 1.403.831 2.911 1.413 4.519 1.759l.331.074c.333.064.674.112 1.016.155.253.033.506.065.762.087l.34.039.483.003.525.026.418-.021.689-.034c.409-.028.812-.073 1.212-.131l.243-.036zm-9.409-16.75h0zm19.527-2.741l-.007.131.005-.132.002.001z"
+											fill="#EC8840" />
+										</svg>
+									</div>
+									<h4 class="browser-title"> FireFox </h4>
+								</li>
+								<li class="">
+									<div class="browser-icon">
+										<svg enable-background="new 0.001 -0.001 31.996 29.997" height="64" viewBox="0.001 -0.001 31.996 29.997" width="64" xmlns="http://www.w3.org/2000/svg">
+											<path d="M23.841 17.972h8.032c.074-.576.147-1.162.116-1.758-.321-6.163-4.144-11.568-9.642-13.413l.423.084s10.027-4.359 6.644 5.447l.412.677s3.089-7.542-1.688-8.789c-3.909-1.02-9.686 1.814-9.686 1.814l.213.042c-.359-.025-.721-.042-1.088-.042-7.146 0-13.078 4.845-14.215 11.453.81-.907 3.712-4.255 6.979-6.352 0 0-5.566 4.76-7.177 8.671 0 0-2.064 3.502-2.742 6.122-.41 1.588-1.463 7.283 2.742 7.938 4.376.68 7.829-1.551 7.829-1.551l-.084-.047c1.994 1.018 4.261 1.598 6.667 1.598 6.375 0 11.779-4.26 13.68-9.855h-8.242c-1.123 2.213-3.112 3.449-5.467 3.449-3.123 0-5.413-1.84-6.008-5.488h12.302zm-13.819 9.807s-2.421 1.18-4.463 1.236c-6.243-.057-1.565-8.506-1.565-8.506l-.003-.009c1.107 3.051 3.264 5.619 6.048 7.291l-.017-.012zm7.556-19.226c3.617 0 5.309 2.446 5.718 5.45h-11.697c.635-2.98 2.702-5.45 5.979-5.45z"
+											fill="#26A6D1" />
+										</svg>
+									</div>
+									<h4 class="browser-title"> IE 10+ </h4>
+								</li>
+							</ul>
+							<!-- End of Browser Support -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of One Page Content -->
+	</div>
+	<script src="js/all.js"></script>
+	<script src="js/custom.js"></script>
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<!-- 
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+     -->
+</body>
+
+</html>

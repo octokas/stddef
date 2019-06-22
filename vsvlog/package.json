@@ -1,0 +1,35 @@
+{
+  "name": "Kaska",
+  "version": "1.0.0",
+  "description": "Author behind stddef",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "documentation",
+    "technical documentation", 
+    "standard type definitions", 
+    "c language", 
+    "c++", 
+    "programming", 
+    "coding", 
+    "computer software", 
+    "systems engineering", 
+    "frequently asked questions",
+    "template"
+  ],
+  "author": "Kaska Miskolczi",
+  "license": "gpl-3.0",
+  "devDependencies": {
+    "browser-sync": "^2.12.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5",
+    "gulp-wrap": "^0.11.0"
+  }
+}
