@@ -1,0 +1,24 @@
+{
+  "name": "stddef",
+  "version": "1.0.0",
+  "description": "Standard type defintions & learning guides for people who want to better understand their systems.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "documentation",
+    "template"
+  ],
+  "author": "Kaska Miskolczi",
+  "license": "gpl-3.0",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.5",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.2"
+  }
+}
