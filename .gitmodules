@@ -1,0 +1,3 @@
+[submodule "stddefh"]
+	path = stddefh
+	url = git@github.com:stddef/stddefh.git
